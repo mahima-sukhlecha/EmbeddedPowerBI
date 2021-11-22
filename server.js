@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/', function (req, res) {
-    console.log("HERKKKKKKKKKK")
+    console.log("HEReeKKKKKKKKKK")
     res.sendFile(path.join(__dirname + '/../views/index.html'));
 });
 
