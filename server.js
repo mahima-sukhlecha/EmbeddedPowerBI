@@ -4,8 +4,8 @@
 // ----------------------------------------------------------------------------
 
 let path = require('path');
-let embedToken = require(__dirname + '/embedConfigService.js');
-const utils = require(__dirname + "/utils.js");
+let embedToken = require(__dirname + '/src/embedConfigService.js');
+const utils = require(__dirname + "/src/utils.js");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
