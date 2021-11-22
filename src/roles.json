@@ -1,0 +1,10 @@
+{
+   "WH_Roles":{
+       "user_mail_Ids": ["mahima.sukhlecha@celebaltech.com"],
+       "roles": ["WH"]
+   },
+   "PB_Roles":{
+       "user_mail_Ids": ["jyoti.malik@celebaltech.com"],
+       "roles": ["PB"]
+   }
+}
