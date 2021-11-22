@@ -48,4 +48,4 @@ app.get('/getEmbedToken', async function (req, res) {
 });
 
 
-app.listen(process.env.PORT || 5300, () => console.log(`Listening on port ${port}`));
+app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));
