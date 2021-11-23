@@ -4,7 +4,7 @@
 // ----------------------------------------------------------------------------
 
 const auth = require(__dirname + "/authentication.js");
-const config = require(__dirname + "/../config/config.json");
+const config = require(__dirname + "/../config/celebalConfig.json");
 const utils = require(__dirname + "/utils.js");
 const PowerBiReportDetails = require(__dirname + "/../models/embedReportConfig.js");
 const EmbedConfig = require(__dirname + "/../models/embedConfig.js");
@@ -33,7 +33,7 @@ async function getEmbedInfo() {
     } catch (err) {
         return {
             'status': err.status,
-            'error': `Error while retrieving report embed details\r\n${err.statusText}\r\nRequestId: \n${err.headers.get('requestid')}`
+            'error': `Error while retrieving report embed details\r\n${err.statusText}\r\nRequestId: }`
         }
     }
 }
@@ -54,7 +54,6 @@ async function getEmbedParamsForSingleReport(workspaceId, reportId, additionalDa
         method: 'GET',
         headers: headers,
     })
-
     if (!result.ok) {
         throw result;
     }
@@ -79,7 +78,8 @@ async function getEmbedParamsForSingleReport(workspaceId, reportId, additionalDa
 
     // Get Embed token multiple resources
     reportEmbedConfig.embedToken = await getEmbedTokenForSingleReportSingleWorkspace(reportId, datasetIds, workspaceId);
-    //console.log("reportEmbedConfig",reportEmbedConfig)
+    //console.log("reportEmbedConfig", reportEmbedConfig)
+
     return reportEmbedConfig;
     //return resultJson
 }
@@ -152,16 +152,16 @@ async function getEmbedTokenForSingleReportSingleWorkspace(reportId, datasetIds,
         var url = 'https://api.powerbi.com/v1.0/myorg/groups/' + config.workspaceId + '/reports/' + config.reportId + '/GenerateToken';
 
         const headers = await getRequestHeader();
-        username = "jyoti.malik@celebaltech.com"
-        var roles = fetchRolesOnBasisOfUsernames(username);
-        
+        // username = "jyoti.malik@celebaltech.com"
+        // var roles = fetchRolesOnBasisOfUsernames(username);
+        var roles = ["Role_1"]
         var options = {
             headers: headers,
             method: 'POST',
             body: JSON.stringify({
                 "accessLevel": "View",
                 "identities": [{
-                    "username": username,
+                    "username": "mahima.sukhlecha@celebaltech.com",
                     "roles": roles,
                     "datasets": [config.datasetId]
                 }]
