@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'EmbeddedPowerBiRevisedWebApp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EFCA87F5D8D44CE1892D580E99CD97C5 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E505E9E8AFE742919148B44768B7DDF9 }}
           package: .
